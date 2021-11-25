@@ -10,9 +10,8 @@ import java.util.ArrayList;
  * Porcje losowe < M/2
  * Na Lockach i Conditions
  * 4 Conditions i boolean zamiast hasWaiters
- * Wypisuje kto ile czeka
- * Totally consumed: 240674227
- * Totally produced: 240674240
+ * Totally consumed: 240674227 per hour
+ * Totally produced: 240674240 per hour
  */
 
 public class PKProblem {
