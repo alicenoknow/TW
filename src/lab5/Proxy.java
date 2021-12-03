@@ -15,7 +15,7 @@ public class Proxy {
         Future future = new Future();
         MethodRequest task = new MethodRequest(TaskType.PUT, portion, future, this.servant);
         this.scheduler.entryQueue.put(task);
-        System.out.println("Producer task placed in entry");
+//        System.out.println("Producer task placed in entry");
         return future;
     }
 
@@ -23,7 +23,7 @@ public class Proxy {
         Future future = new Future();
         MethodRequest task = new MethodRequest(TaskType.TAKE, portion, future, this.servant);
         this.scheduler.entryQueue.put(task);
-        System.out.println("Consumer task placed in entry");
+//        System.out.println("Consumer task placed in entry");
 
         return future;
     }

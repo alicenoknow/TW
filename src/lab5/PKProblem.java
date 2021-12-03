@@ -7,13 +7,13 @@ import java.util.ArrayList;
  */
 
 public class PKProblem {
-    public static int MAX_BUFFER_CAPACITY = 10;
+    public static int MAX_BUFFER_CAPACITY = 30;
 
     public static void main(String[] args) {
         ArrayList<Thread> threads = new ArrayList<>();
         int REAL_TIME = 300000;
-        int producersCount = 5;
-        int consumersCount = 5;
+        int producersCount = 10;
+        int consumersCount = 10;
         boolean first = true;
 
         Servant servant = new Servant();
@@ -32,6 +32,19 @@ public class PKProblem {
             t = new Thread(new Producer(proxy));
             threads.add(t);
             t.start();
+        }
+
+         for(Thread th : threads) {
+            if(first) {
+                try {
+                    th.join(REAL_TIME);
+                    first = false;
+
+                } catch (InterruptedException e) {
+                    System.out.println("Thread interrupted");
+                }
+            }
+            th.interrupt();
         }
 
         System.out.println("Totally consumed: " + Scheduler.totalConsumed);

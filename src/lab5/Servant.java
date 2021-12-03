@@ -11,12 +11,12 @@ public class Servant {
 
     public void take(int portion) {
         this.currentBufferSize -= portion;
-//        Scheduler.totalConsumed += portion;
+        Scheduler.totalConsumed += portion;
     }
 
     public void put(int portion) {
         this.currentBufferSize += portion;
-//        Scheduler.totalProduced += portion;
+        Scheduler.totalProduced += portion;
     }
 
     public boolean canTake(int portion) {

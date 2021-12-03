@@ -10,13 +10,13 @@ import java.util.ArrayList;
  */
 
 public class PKProblem {
-    public static int MAX_BUFFER_CAPACITY = 10;
+    public static int MAX_BUFFER_CAPACITY = 30;
 
     public static void main(String[] args) {
         ArrayList<Thread> threads = new ArrayList<>();
         int REAL_TIME = 300000;
-        int producersCount = 30;
-        int consumersCount = 30;
+        int producersCount = 20;
+        int consumersCount = 20;
         boolean first = true;
 
         Buffer buf = new Buffer();
